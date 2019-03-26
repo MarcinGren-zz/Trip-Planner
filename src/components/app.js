@@ -1,9 +1,10 @@
 import React from 'react'
+import Expenses from '../containers/expenses'
 
 const App = () =>
   (
         <div>
-          zxc
+          <Expenses />
         </div>
   )
 
