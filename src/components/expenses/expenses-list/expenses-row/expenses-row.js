@@ -8,7 +8,8 @@ const StyledExpensesRow = styled.div`
 const ExpensesRow = ({ expense }) => {
   return (
     <StyledExpensesRow>
-      {expense}
+      <span>{expense.name}</span>
+      <span>{expense.cost}</span>
     </StyledExpensesRow>
   )
 }

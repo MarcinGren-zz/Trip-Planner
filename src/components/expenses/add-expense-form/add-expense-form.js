@@ -13,6 +13,7 @@ class AddExpenseForm extends Component {
       expenseCost: ''
     }
 
+    this.expenseNameRef = React.createRef()
     this.handleExpenseNameChange = this.handleExpenseNameChange.bind(this)
     this.handleExpenseCostChange = this.handleExpenseCostChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -27,8 +28,15 @@ class AddExpenseForm extends Component {
   }
 
   handleSubmit() {
+    const { expenseName, expenseCost } = this.state
+
     event.preventDefault()
-    this.props.onAddExpense(this.state.expenseName)
+    this.props.onAddExpense(expenseName, expenseCost)
+    this.setState({
+      expenseName: '',
+      expenseCost: ''
+    })
+    this.expenseNameRef.current.focus()
   }
 
   render() {
@@ -37,7 +45,7 @@ class AddExpenseForm extends Component {
     return (
       <StyledAddExpenseForm>
         <form onSubmit={this.handleSubmit}>
-          <input name='NewExpenseName' type='text' value={expenseName} onChange={this.handleExpenseNameChange} />
+          <input name='NewExpenseName' type='text' ref={this.expenseNameRef} value={expenseName} onChange={this.handleExpenseNameChange} />
           <input name='NewExpenseCost' type='number' value={expenseCost} onChange={this.handleExpenseCostChange} />
           <button type='submit'>Add</button>
         </form>

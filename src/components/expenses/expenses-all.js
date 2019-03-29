@@ -10,7 +10,6 @@ const StyledExpensesAll = styled.div`
 
 const ExpensesAll = ({ expenses, addExpense }) => {
   return (
-
     
     <StyledExpensesAll>
       <AddExpenseForm onAddExpense={addExpense} />
