@@ -11,7 +11,7 @@ const StyledNavbar = styled.nav`
     display: flex;
   }
 
-  & a, a:visited {
+  & a, a:link, a:visited {
     display: flex;
     width: 25%;
     color: black;
@@ -40,8 +40,8 @@ const Navbar = () => (
         <Link to='/daybyday'>
           <li>Day by day</li>
         </Link>
-        <Link to='/sights'>
-          <li>Sights</li>
+        <Link to='/places'>
+          <li>Places</li>
         </Link>
         <Link to='/expenses'>
           <li>Expenses</li>

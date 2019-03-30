@@ -3,7 +3,8 @@ import { ThemeProvider } from 'styled-components'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import theme from './theme'
 import Navbar from './navbar/navbar'
-import Expenses from '../containers/expenses'
+import ExpensesContainer from '../containers/expenses-container'
+import PlacesContainer from '../containers/places-container'
 
 const App = () =>
   (
@@ -12,7 +13,8 @@ const App = () =>
         <div>
           <Navbar />
           <Switch>
-            <Route path='/expenses' render={() => <Expenses />} />
+            <Route path='/expenses' render={() => <ExpensesContainer />} />
+            <Route path='/places' render={() => <PlacesContainer />} />
             {/* <Route path='/'  */}
           </Switch>
         </div>
