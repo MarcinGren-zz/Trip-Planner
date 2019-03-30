@@ -22,6 +22,16 @@ const GlobalStyle = createGlobalStyle`
   select {
     font-family: 'Karla', sans-serif;
   }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    text-decoration: none;
+  }
 `
 
 export default GlobalStyle
