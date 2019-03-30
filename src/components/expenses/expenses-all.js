@@ -5,7 +5,10 @@ import AddExpenseForm from './add-expense-form/add-expense-form'
 
 
 const StyledExpensesAll = styled.div`
+  /* for now doesn't really matter */
   background: red;
+  width: 50%; 
+
 `
 
 const ExpensesAll = ({ expenses, addExpense }) => {

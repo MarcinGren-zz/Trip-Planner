@@ -7,7 +7,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  addExpense: (name, cost) => dispatch(addExpense(name, cost))
+  addExpense: (name, cost, category) => dispatch(addExpense(name, cost, category))
 })
 
 export default connect(

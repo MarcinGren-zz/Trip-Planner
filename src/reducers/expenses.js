@@ -2,13 +2,16 @@ import { ADD_EXPENSE } from '../actions/index'
 
 const mockedState = [{
   name: 'Plane Tickets',
-  cost: 1000
+  cost: 1000,
+  category: 'Transportation'
 }, {
-  name: 'Food',
-  cost: 200
+  name: 'Pizza',
+  cost: 200,
+  category: 'Food'
 }, {
-  name: 'Sightseeing',
-  cost: 100
+  name: 'Visiting Museum',
+  cost: 100,
+  category: 'Sightseeing'
 }]
 
 const expenses = (state = mockedState, action) => {
@@ -18,7 +21,8 @@ const expenses = (state = mockedState, action) => {
         ...state,
         {
           name: action.name,
-          cost: action.cost
+          cost: action.cost,
+          category: action.category
         }
       ]
 

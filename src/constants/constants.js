@@ -1,0 +1,5 @@
+export const TRANSPORTATION = 'Transportation'
+export const FOOD = 'Food'
+export const LODGING = 'Lodging'
+export const SIGHTSEEING = 'Sightseeing'
+export const OTHER = 'Other'

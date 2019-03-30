@@ -1,53 +1,74 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import { TRANSPORTATION, LODGING, FOOD, SIGHTSEEING, OTHER } from '../../../constants/constants'
 
 const StyledAddExpenseForm = styled.div`
   background: orange;
+
+  & .item {
+    width: 53%;
+  }
+
+  & .cost {
+    width: 15%;
+  }
+
+  & .category {
+    width: 20%
+  }
+
+  & .submit {
+    width: 10%;
+  }
 `
+
+const listOfCategories = [TRANSPORTATION, LODGING, FOOD, SIGHTSEEING, OTHER]
 
 class AddExpenseForm extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      expenseName: '',
-      expenseCost: ''
+      item: '',
+      cost: '',
+      category: TRANSPORTATION
     }
 
-    this.expenseNameRef = React.createRef()
-    this.handleExpenseNameChange = this.handleExpenseNameChange.bind(this)
-    this.handleExpenseCostChange = this.handleExpenseCostChange.bind(this)
+    this.itemRef = React.createRef()
+    this.handleFieldChange = this.handleFieldChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
-  handleExpenseNameChange(event) {
-    this.setState({ expenseName: event.target.value })
-  }
-
-  handleExpenseCostChange(event) {
-    this.setState({ expenseCost: event.target.value})
+  handleFieldChange(event) {
+    this.setState({ [event.target.name]: event.target.value})
   }
 
   handleSubmit() {
-    const { expenseName, expenseCost } = this.state
+    const { item, cost, category } = this.state
 
     event.preventDefault()
-    this.props.onAddExpense(expenseName, expenseCost)
+    this.props.onAddExpense(item, cost, category)
     this.setState({
-      expenseName: '',
-      expenseCost: ''
+      item: '',
+      cost: '',
+      category: TRANSPORTATION
     })
-    this.expenseNameRef.current.focus()
+    this.itemRef.current.focus()
   }
 
   render() {
-    const { expenseName, expenseCost } = this.state
+    const { item, cost, category } = this.state
 
     return (
       <StyledAddExpenseForm>
         <form onSubmit={this.handleSubmit}>
-          <input name='NewExpenseName' type='text' ref={this.expenseNameRef} value={expenseName} onChange={this.handleExpenseNameChange} />
-          <input name='NewExpenseCost' type='number' value={expenseCost} onChange={this.handleExpenseCostChange} />
-          <button type='submit'>Add</button>
+          <input name='item' class='item' type='text' ref={this.itemRef} value={item} onChange={this.handleFieldChange} />
+          <input name='cost' class='cost' type='number' value={cost} onChange={this.handleFieldChange} />
+          <select name='category' class='category' value={category} required={true} onChange={this.handleFieldChange} >
+            {listOfCategories.map(category => (
+              <option value={category}>{category}</option>
+            ))}
+          </select>
+          <button class='submit' type='submit'>Add</button>
         </form>
       </StyledAddExpenseForm>
     )

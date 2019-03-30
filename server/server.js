@@ -13,9 +13,9 @@ class Server {
 
   initServer() {
     this.app = express()
-    // app.use(webpackDevMiddleware(compiler, {
-    //   publicPath: config.output.publicPath
-    // }))
+    this.app.use(webpackDevMiddleware(compiler, {
+      publicPath: config.output.publicPath
+    }))
     
     this.app.use(express.static(config.output.publicPath))
     
