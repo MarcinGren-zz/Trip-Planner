@@ -4,7 +4,7 @@ import PlaceRow from './places-row/places-row'
 
 const StyledPlacesList = styled.table`
   background: orange;
-  width: 100%;
+  width: 50%;
   table-layout: fixed;
 `
 
