@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import { withGoogleMap, GoogleMap, Marker } from 'react-google-maps'
-import MapComponent from './map'
 import MapWithSearchBox from './map-with-search-box/map-with-search-box'
 import StyledInsideMapDivSmall from '../../common/inside-map-div-small'
 import { SIGHTSEEING, LIST_OF_PLACES_CATEGORIES } from '../../../constants/constants'
