@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import { TRANSPORTATION, LODGING, FOOD, SIGHTSEEING, OTHER } from '../../../constants/constants'
+import { TRANSPORTATION, LIST_OF_EXPENSE_CATEGORIES } from '../../../constants/constants'
 
 const StyledAddExpenseForm = styled.div`
   background: orange;
@@ -22,7 +22,6 @@ const StyledAddExpenseForm = styled.div`
   }
 `
 
-const listOfCategories = [TRANSPORTATION, LODGING, FOOD, SIGHTSEEING, OTHER]
 
 class AddExpenseForm extends Component {
   constructor(props) {
@@ -64,7 +63,7 @@ class AddExpenseForm extends Component {
           <input name='item' class='item' type='text' ref={this.itemRef} value={item} onChange={this.handleFieldChange} />
           <input name='cost' class='cost' type='number' value={cost} onChange={this.handleFieldChange} />
           <select name='category' class='category' value={category} required={true} onChange={this.handleFieldChange} >
-            {listOfCategories.map(category => (
+            {LIST_OF_EXPENSE_CATEGORIES.map(category => (
               <option value={category}>{category}</option>
             ))}
           </select>
