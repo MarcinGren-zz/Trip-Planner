@@ -1,3 +1,5 @@
+import React from 'react'
+
 export const TRANSPORTATION = 'Transportation'
 export const FOOD = 'Food'
 export const LODGING = 'Lodging'
@@ -12,4 +14,10 @@ export const DEFAULT_MAP_OPTIONS = {
   mapTypeControl: false,
   streetViewControl: false,
   fullscreenControl: false
+}
+
+export const DEFAULT_MAP_PROPS = {
+  googleMapURL: `https://maps.googleapis.com/maps/api/js?key=${process.env.GOOGLE_API_KEY}&v=3.exp&libraries=geometry,drawing,places`,
+  loadingElement: <div style={{ height: `100%` }} />,
+  mapElement: <div style={{ height: `100%` }} />
 }

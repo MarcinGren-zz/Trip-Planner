@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { withGoogleMap, GoogleMap, Marker } from 'react-google-maps'
 import MapWithSearchBox from './map-with-search-box/map-with-search-box'
 import StyledInsideMapDivSmall from '../../common/inside-map-div-small'
-import { SIGHTSEEING, LIST_OF_PLACES_CATEGORIES } from '../../../constants/constants'
+import { SIGHTSEEING, LIST_OF_PLACES_CATEGORIES, DEFAULT_MAP_PROPS } from '../../../constants/constants'
 
 const StyledAddPlaceForm = styled.form`
   display: flex;
@@ -81,10 +81,8 @@ class AddPlaceForm extends Component {
         </div>
         <MapWithSearchBox 
           onPlaceUpdate={this.handlePlaceUpdate}
-          googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${process.env.GOOGLE_API_KEY}&v=3.exp&libraries=geometry,drawing,places`}
-          loadingElement={<div style={{ height: `100%` }} />}
           containerElement={<StyledInsideMapDivSmall />}
-          mapElement={<div style={{ height: `100%` }} />}
+          {...DEFAULT_MAP_PROPS}
         />
       </StyledAddPlaceForm>
     )
