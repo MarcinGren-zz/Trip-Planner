@@ -2,10 +2,10 @@ import React, { Component } from 'react'
 const { withScriptjs, withGoogleMap, GoogleMap } = require("react-google-maps")
 const { MarkerWithLabel } = require("react-google-maps/lib/components/addons/MarkerWithLabel")
 
-const MapWithAllPlaces = ({ places }) => {
-    return (
+const MapWithAllPlaces = ({ places }) => (
     <GoogleMap
       defaultZoom={13}
+      //just some temp value atm in Vienna
       defaultCenter={{ lat: 50.0910966, lng: 14.401616500000046 }}
     >
     {places.map(place =>
@@ -21,6 +21,5 @@ const MapWithAllPlaces = ({ places }) => {
     )}
     </GoogleMap>
     )
-  }
 
 export default withScriptjs(withGoogleMap(MapWithAllPlaces))

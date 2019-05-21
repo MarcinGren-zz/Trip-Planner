@@ -13,8 +13,8 @@ const App = () =>
         <div>
           <Navbar />
           <Switch>
-            <Route path='/expenses' render={() => <ExpensesContainer />} />
-            <Route path='/places' render={() => <PlacesContainer />} />
+            <Route path='/expenses' component={ExpensesContainer} />
+            <Route path='/places' component={PlacesContainer} />
             {/* <Route path='/'  */}
           </Switch>
         </div>

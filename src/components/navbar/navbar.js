@@ -7,11 +7,15 @@ const StyledNavbar = styled.nav`
   margin-bottom: 20px;
   height: 100%;
 
-  & ul {
-    display: flex;
-  }
 
-  & a, a:link, a:visited {
+`
+
+const StyledNavbarList = styled.ul`
+    display: flex;
+`
+
+const StyledLink = styled(Link)`
+  &:link, &:visited {
     display: flex;
     width: 25%;
     color: black;
@@ -24,7 +28,7 @@ const StyledNavbar = styled.nav`
     justify-content: center;  
   }
 
-  & a:hover, & a:active {
+  &:hover, &:active {
     background: ${props => props.theme.colors.earthyBrown};
     cursor: pointer;
   }
@@ -32,22 +36,20 @@ const StyledNavbar = styled.nav`
 
 const Navbar = () => (
   <StyledNavbar>
-    <nav>
-      <ul>
-        <Link to='/'>
-          <li>Overview</li>
-        </Link>
-        <Link to='/daybyday'>
-          <li>Day by day</li>
-        </Link>
-        <Link to='/places'>
-          <li>Places</li>
-        </Link>
-        <Link to='/expenses'>
-          <li>Expenses</li>
-        </Link>
-      </ul>
-    </nav>
+    <StyledNavbarList>
+      <StyledLink to='/'>
+        <li>Overview</li>
+      </StyledLink>
+      <StyledLink to='/daybyday'>
+        <li>Day by day</li>
+      </StyledLink>
+      <StyledLink to='/places'>
+        <li>Places</li>
+      </StyledLink>
+      <StyledLink to='/expenses'>
+        <li>Expenses</li>
+      </StyledLink>
+    </StyledNavbarList>
   </StyledNavbar>
 )
 
