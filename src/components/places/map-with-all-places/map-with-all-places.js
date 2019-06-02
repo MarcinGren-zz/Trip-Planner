@@ -6,7 +6,7 @@ const MapWithAllPlaces = ({ places }) => (
     <GoogleMap
       defaultZoom={13}
       //just some temp value atm in Vienna
-      defaultCenter={{ lat: 50.0910966, lng: 14.401616500000046 }}
+      defaultCenter={{ lat: 48.2081743, lng: 16.37381890000006 }}
     >
     {places.map(place =>
       <MarkerWithLabel

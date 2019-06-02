@@ -80,7 +80,7 @@ class MapWithSearchBox extends Component {
           controlPosition={google.maps.ControlPosition.TOP_LEFT}
           onPlacesChanged={this.onPlacesChanged}
         >
-          <StyledInput type="text" placeholder="Find what you want to visit!" />
+          <StyledInput type="text" placeholder="First find what you want to visit here!" />
         </SearchBox>
         {this.state.marker ? <Marker position={this.state.marker} /> : null}
       </GoogleMap>

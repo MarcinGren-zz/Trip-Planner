@@ -1,26 +1,26 @@
 import { ADD_PLACE } from '../actions/index'
 
 const mockedState =[{
-  name: 'Prague Castle',
+  name: 'Belvedere',
   day: 1,
   category: 'Sightseeing',
-  placeId: 'ChIJw7ckbB6VC0cRnyUSr4g8zyo',
-  long: 14.401616500000046,
-  lat: 50.0910966
+  placeId: 'ChIJpZ4LAn0HbUcRB3aToFL8ZUo',
+  long: 16.38095469999996,
+  lat: 48.1915585
 }, {
-  name: 'Prague Old Town',
+  name: 'Albertina',
   day: 1,
   category: 'Sightseeing',
-  placeId: 'ChIJ6dXlGemUC0cRUfsgXBCvACY',
-  long: 14.419407399999955,
-  lat: 50.0894377
+  placeId: 'ChIJwVp-8psHbUcRuN43n5iK72Y',
+  long: 16.368182400000023,
+  lat: 48.2046992
 }, {
-  name: 'Pizza Nuova',
+  name: 'Rathaus',
   day: 1,
   category: 'Eating Out',
-  placeId: 'ChIJCZlGiuqUC0cRbI2NYf9dwzo',
-  long: 14.427775600000018,
-  lat: 50.08944389999999
+  placeId: 'ChIJ_WDSuJUHbUcR2QUpvg7vqR4',
+  long: 16.357248600000048,
+  lat: 48.21086849999999
 }]
 
 const places = (state = mockedState, action) => {

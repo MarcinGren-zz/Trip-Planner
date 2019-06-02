@@ -6,8 +6,6 @@ const StyledNavbar = styled.nav`
   width: 100%;
   margin-bottom: 20px;
   height: 100%;
-
-
 `
 
 const StyledNavbarList = styled.ul`

@@ -8,13 +8,12 @@ import { SIGHTSEEING, LIST_OF_PLACES_CATEGORIES, DEFAULT_MAP_PROPS } from '../..
 const StyledAddPlaceForm = styled.form`
   display: flex;
   flex-direction: row;
+`
 
-  & .left-side {
+const LeftSide = styled.div`
     display: flex;
     flex-direction: column;
     width: 50%;
-  }
-
 `
 
 class AddPlaceForm extends Component {
@@ -69,16 +68,16 @@ class AddPlaceForm extends Component {
 
     return (
       <StyledAddPlaceForm onSubmit={this.handleSubmit}>
-        <div className='left-side'>
-          <input name='item' class='item' type='text' ref={this.itemRef} value={item} onChange={this.handleFieldChange} />
-          <input name='day' class='day' type='number' value={day} onChange={this.handleFieldChange} />
+        <LeftSide>
+          <input name='item' placeholder='Then enter the name of the place to display' class='item' type='text' ref={this.itemRef} value={item} onChange={this.handleFieldChange} />
+          <input name='day' placeholder='And enter the day you want to go there' class='day' type='number' value={day} onChange={this.handleFieldChange} />
           <select name='category' class='category' value={category} required={true} onChange={this.handleFieldChange} >
             {LIST_OF_PLACES_CATEGORIES.map(category => (
               <option value={category}>{category}</option>
             ))}
           </select>
           <button class='submit' type='submit'>Add</button>
-        </div>
+        </LeftSide>
         <MapWithSearchBox 
           onPlaceUpdate={this.handlePlaceUpdate}
           containerElement={<StyledInsideMapDivSmall />}
